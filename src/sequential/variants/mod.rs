@@ -13,9 +13,11 @@ pub mod sorted;
 pub mod random;
 
 pub mod prelude {
+    #[cfg(feature = "random")]
+    pub use super::random::prelude::*;
     pub use super::{
         ForcedSequence, IdentityPickerBuilder, Selector, Sequence, SequentialAnd, SequentialOr,
-        random::prelude::*, score_uniform, sorted::prelude::*,
+        score_uniform, sorted::prelude::*,
     };
 }
 
